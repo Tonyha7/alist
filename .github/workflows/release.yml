@@ -31,13 +31,6 @@ jobs:
           docker-images: true
           swap-storage: true
 
-      - name: Prerelease
-        uses: irongut/EditRelease@v1.2.0
-        with:
-          token: ${{ secrets.MY_TOKEN }}
-          id: ${{ github.event.release.id }}
-          prerelease: true
-
       - name: Setup Go
         uses: actions/setup-go@v5
         with:
