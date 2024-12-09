@@ -55,5 +55,9 @@ jobs:
       - name: Upload assets
         uses: softprops/action-gh-release@v2
         with:
-          files: build/compress/*
-          prerelease: false
+          files: | 
+            build/compress/*
+          name: Build_${{ github.run_id }}
+          tag_name: ${{ github.run_id }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
